@@ -15,21 +15,22 @@
                 <div class="card-group" id="characters">
                     <h3>Pick your characters:</h3>
                     <div th:each="card : ${character}">
-                        <input field="*{cards}" type="checkbox" th:value="${card.id}" />
+                        <input name="cards" type="checkbox" th:value="${card.id}" />
                         <span th:text="${card.cardName}">CHARACTER</span><br/>
                     </div>
                 </div>
+
                 <div class="card-group" id="weapons">
                     <h3>Choose your weapons:</h3>
                     <div th:each="card : ${weapon}">
-                        <input field="*{cards}" type="checkbox" th:value="${card.id}"/>
+                        <input name="cards" type="checkbox" th:value="${card.id}"/>
                         <span th:text="${card.cardName}">WEAPON</span><br/>
                     </div>
                 </div>
                 <div class="card-group" id="talents">
                     <h3>Determine your talents:</h3>
                     <div th:each="card : ${talent}">
-                        <input field="*{cards}" type="checkbox" th:value="${card.id}"/>
+                        <input name="cards" type="checkbox" th:value="${card.id}"/>
                         <span th:text="${card.cardName}">TALENT</span><br/>
                     </div>
                 </div>
@@ -38,8 +39,14 @@
             <div>
                 <h3>Name your deck:</h3>
                 <input type="text" th:field="*{name}"/><br/>
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('name')}"
+                      th:errors="*{name}">Name Error</span>
                 <h3>whatever number you like:(id)</h3>
                 <input type="text" th:field="*{id}"/><br/>
+                <span class="validationError"
+                      th:if="${#fields.hasErrors('id')}"
+                      th:errors="*{id}">ID Error</span>
                 <button>Submit your deck</button>
             </div>
         </form>
