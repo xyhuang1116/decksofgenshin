@@ -9,5 +9,5 @@ public class HomeController {
     @GetMapping("/") // handles requests for the root path
     public String home() {
         return "home";  //return the view name
-    }
+    }    
 }
