@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 import lombok.extern.slf4j.Slf4j;
 import decks.decksofgenshin.Card.Type;
@@ -22,17 +24,18 @@ import decks.decksofgenshin.Card.Type;
 @Slf4j
 @Controller
 @RequestMapping("/build")
+@SessionAttributes("card")
 public class BuildDeckController {
     
     @GetMapping
     public String addCardsToModel(Model model){
         List<Card> cards = Arrays.asList(
-            new Card("Ganyu","id1",3,Type.CHARACTER,"Sources","desc1","desc2"),
-            new Card("Cyno","id2",4,Type.CHARACTER,"Sources","desc1","desc2"),
-            new Card("Echoing Ballad: Skyward Harp","id3",3,Type.WEAPON,"Sources","desc1","desc2"),
-            new Card("Evil Shall Never Prevail: Lithic Spear","id4",3,Type.WEAPON,"Sources","desc1","desc2"),
-            new Card("Stealthy Extraction","id5",3,Type.TALENT,"Sources","desc1","desc2"),
-            new Card("Xiangling: Crossfire","id6",3,Type.TALENT,"Sources","desc1","desc2")
+            new Card("Ganyu","G",3,Type.CHARACTER,"Sources","desc1","desc2"),
+            new Card("Cyno","C",4,Type.CHARACTER,"Sources","desc1","desc2"),
+            new Card("Echoing Ballad: Skyward Harp","EB",3,Type.WEAPON,"Sources","desc1","desc2"),
+            new Card("Evil Shall Never Prevail: Lithic Spear","ES",3,Type.WEAPON,"Sources","desc1","desc2"),
+            new Card("Stealthy Extraction","SE",3,Type.TALENT,"Sources","desc1","desc2"),
+            new Card("Xiangling: Crossfire","XC",3,Type.TALENT,"Sources","desc1","desc2")
         );
 
         Type[] types = Card.Type.values();
@@ -49,13 +52,17 @@ public class BuildDeckController {
         return new Deck();
     }
 
-    @PostMapping
-    public String processDeck(@Valid Deck deck, Errors errors){   //TO-DO
-        if(errors.hasErrors()){
-            return "build";
-        }
-        log.info("Saving deck:{}", deck);
+ 
 
+    @PostMapping
+    public String processDeck(@Valid Deck deck, Errors errors,SessionStatus sessionStatus){   
+        
+        if(errors.hasErrors()){
+            return "build";  //TO-DO: the page doesn't show card list
+        }
+       
+        log.info("Saving deck:{}", deck);
+        sessionStatus.setComplete();
         return "redirect:/decks/current";
     }
 

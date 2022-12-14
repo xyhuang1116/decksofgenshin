@@ -11,6 +11,9 @@
         <img th:src="@{/image/Achievement_Invoker.png}"/>
 
         <form method="POST" th:object="${deck}">
+            <span class="validationError"
+                      th:if="${#fields.hasErrors('cards')}"
+                      th:errors="*{cards}">Cards Error</span>
             <div class="grid">
                 <div class="card-group" id="characters">
                     <h3>Pick your characters:</h3>
