@@ -1,11 +1,21 @@
 package decks.decksofgenshin;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor(access=AccessLevel.PRIVATE, force=true)
 public class Card {
-    private final String cardName;
+    @Id
     private final String id;
+    private final String cardName;
     private final int rarity;
     private final Type type;
     private final String sources;
