@@ -1,4 +1,4 @@
-package decks.decksofgenshin;
+package decks.decksofgenshin.web;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
 import lombok.extern.slf4j.Slf4j;
+import decks.decksofgenshin.Card;
+import decks.decksofgenshin.Deck;
 import decks.decksofgenshin.Card.Type;
 
 

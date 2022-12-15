@@ -1,8 +1,9 @@
-package decks.decksofgenshin;
+package decks.decksofgenshin.web;
 
 import java.util.HashMap;
 import java.util.Map;
 
+import decks.decksofgenshin.Card;
 import decks.decksofgenshin.Card.Type;
 
 import org.springframework.core.convert.converter.Converter;
