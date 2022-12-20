@@ -1,0 +1,63 @@
+id,name,type,subtype,cost,desc,chara_codename
+n330000,Undivided Heart,Talent,SLOWLY,5,,A1101
+n330001,Cold-Blooded Strike,Talent,SLOWLY,4,,A1103
+n330002,Steady Breathing,Talent,SLOWLY,4,,A1104
+n330003,Kanten Senmyou Blessing,Talent,SLOWLY,2,,A1105
+n330004,The Scent Remained,Talent,SLOWLY,4,,A1202
+n330005,Prophecy of Submersion,Talent,SLOWLY,3+3,,A1203
+n330006,Flowing Flame,Talent,SLOWLY,3,,A1301
+n330007,Crossfire,Talent,SLOWLY,4,,A1302
+n330008,Grand Expectation,Talent,SLOWLY,4+2,,A1303
+n330010,Naganohara Meteor Swarm,Talent,SLOWLY,2,,A1305
+n330011,Stellar Predator,Talent,SLOWLY,3,,A1401
+n330012,Awakening,Talent,SLOWLY,4,,A1402
+n330013,Thundering Penance,Talent,SLOWLY,3,,A1403
+n330014,Chaotic Entropy,Talent,SLOWLY,3+2,,A1501
+n330015,Lands of Dandelion,Talent,SLOWLY,4+3,,A1502
+n330016,Strategic Reserve,Talent,SLOWLY,4,,A1601
+n330017,I Got Your Back,Talent,SLOWLY,3,,A1602
+n330018,Floral Sidewinder,Talent,SLOWLY,3,,A1701
+n330019,Streaming Surge,Talent,SLOWLY,4+3,,A2201
+n330020,Paid in Full,Talent,SLOWLY,3,,A2301
+n330021,Transcendent Automaton,Talent,SLOWLY,?,,A2501
+n330022,Stonehide Reforged,Talent,SLOWLY,?,,A2601
+n330023,"Shaken, Not Purred",Talent,SLOWLY,4,,A1102
+n330024,Featherfall Judgment,Talent,SLOWLY,?,,A1404
+n330025,Glorious Season,Talent,SLOWLY,4,,A1201
+n330026,Mirror Cage,Talent,SLOWLY,?,,A2202
+n330027,Proliferating Spores,Talent,SLOWLY,?,,A2701
+n335000,Magic Guide,Weapon,Catalyst,2,,
+n335001,Sacrificial Fragments,Weapon,Catalyst,3,,
+n335002,Skyward Atlas,Weapon,Catalyst,3,,
+n335003,Raven Bow,Weapon,Bow,2,,
+n335004,Sacrificial Bow,Weapon,Bow,3,,
+n335005,Skyward Harp,Weapon,Bow,3,,
+n335006,White Iron Greatsword,Weapon,Claymore,2,,
+n335007,Sacrificial Greatsword,Weapon,Claymore,3,,
+n335008,Wolf’s Gravestone,Weapon,Claymore,3,,
+n335009,White Tassel,Weapon,Pole,2,,
+n335010,Lithic Spear,Weapon,Pole,3,,
+n335011,Skyward Spine,Weapon,Pole,3,,
+n335012,Traveler's Handy Sword,Weapon,Sword,2,,
+n335013,Sacrificial Sword,Weapon,Sword,3,,
+n335014,Aquila Favonia,Weapon,Sword,3,,
+n335015,Adventurer's Bandana,Artifact,,1,,
+n335016,Lucky Dog's Silver Circlet,Artifact,,2,,
+n335017,Traveling Doctor's Handkerchief,Artifact,,1,,
+n335018,Gambler's Earrings,Artifact,,1,,
+n335019,Instructor's Cap,Artifact,,2,,
+n335020,Exile's Circlet,Artifact,,2,,
+n335021,Broken Rime's Echo,Artifact,,2,,
+n335022,Blizzard Strayer,Artifact,,3,,
+n335023,Wine-Stained Tricorne,Artifact,,2,,
+n335024,Heart of Depth,Artifact,,3,,
+n335025,Witch's Scorching Hat,Artifact,,2,,
+n335026,Crimson Witch of Flames,Artifact,,3,,
+n335027,Thunder Summoner's Crown,Artifact,,2,,
+n335028,Thundering Fury,Artifact,,3,,
+n335029,Viridescent Venerer's Diadem,Artifact,,2,,
+n335030,Viridescent Venerer,Artifact,,3,,
+n335031,Mask of Solitude Basalt,Artifact,,2,,
+n335032,Archaic Petra,Artifact,,3,,
+n335033,Laurel Coronet,Artifact,,2,,
+n335034,Deepwood Memories,Artifact,,3,,
