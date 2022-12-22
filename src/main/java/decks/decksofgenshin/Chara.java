@@ -19,8 +19,6 @@ public class Chara {
     private final int hp;
     private final Element element;
     private final Weapon weapon;
-
-    @Column(name = "nation/camp")
     private final NationOrCamp nation;
 
     private final String desc; // the description of the card

@@ -1,4 +1,4 @@
-id,codename,name,hp,element,weapon,nation/camp,desc
+id,code_name,name,hp,element,weapon,nation_or_camp,desc
 n330500,A1101,Ganyu,10,CRYO,Bow,LIYUE,
 n330501,A1103,Kaeya,10,CRYO,Sword,MONDSTADT,
 n330502,A1104,Chongyun,10,CRYO,Claymore,LIYUE,
