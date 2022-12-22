@@ -1,10 +1,8 @@
 package decks.decksofgenshin.data;
 
-import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.data.repository.PagingAndSortingRepository;
 import decks.decksofgenshin.Chara;
 
 public interface CharaRepository 
-         extends CrudRepository<Chara, String> {
-    
+         extends PagingAndSortingRepository<Chara, String> {
 }

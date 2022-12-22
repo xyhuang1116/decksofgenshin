@@ -21,9 +21,9 @@ public class CharaController {
         this.charaRepo = charaRepo;
     }
 
-    // @GetMapping(params="recent")
-    // public Iterable<Chara> recentChara() {
-    //     PageRequest page = PageRequest.of(0, 12);
-    //     return charaRepo.findAll(page).getContent();
-    // }
+    @GetMapping(params="recent")
+    public Iterable<Chara> recentChara() {
+        PageRequest page = PageRequest.of(0, 12);
+        return charaRepo.findAll(page).getContent();
+    }
 }

@@ -26,7 +26,7 @@ class DecksofgenshinApplicationTests {
 	}
 	
 	@Test
-	public void whenCountAllCharactersThenExpectTwentySevenCourses() throws SQLException {
+	public void whenCountAllCharactersThenExpectTwentySevenCharas() throws SQLException {
 		ResultSet rs = null;
 		int noOfCharacters = 0;
 
