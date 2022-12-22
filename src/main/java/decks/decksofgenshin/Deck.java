@@ -29,9 +29,9 @@ public class Deck {
     @NotNull(message="You must choose at least 1 card.")
     @Size(min=33, max=33, message="You can't choose more than 33 card.")
     @ManyToMany()
-    private List<Card> cards = new ArrayList<>(); //TO_DO: Divide card list into character list and card list  
+    private List<Chara> cards = new ArrayList<>(); //TO_DO: Divide card list into character list and card list  
 
-    public void addCard(Card card) {
+    public void addCard(Chara card) {
         this.cards.add(card);
         }
 }
