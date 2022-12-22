@@ -1,7 +1,6 @@
 package decks.decksofgenshin;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -15,12 +14,13 @@ import lombok.NoArgsConstructor;
 public class Chara {
     @Id
     private final String id;
-    private final String name;
     private final String codeName;
+    private final String name;
     private final int hp;
-    private final String element;
-    private final String weapon;
-    private final String nation;
+    private final Element element;
+    private final Weapon weapon;
+    private final NationOrCamp nation;
+
     private final String desc; // the description of the card
     // private final String desc2; // the description of the original object in this card
 
@@ -29,7 +29,7 @@ public class Chara {
     }
 
     public enum Weapon{
-        Bow, Sword, Claymore, Catalyst, Pole, Other
+        Bow, Sword, Claymore, Catalyst, Pole, Other_Weapons
     }
 
     public enum NationOrCamp{

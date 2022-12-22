@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import decks.decksofgenshin.Chara;
-import decks.decksofgenshin.Chara.Element;
 
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
