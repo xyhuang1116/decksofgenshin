@@ -2,6 +2,8 @@ package decks.decksofgenshin;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import java.sql.*;
 
 import javax.sql.DataSource;
@@ -33,7 +35,7 @@ class DecksofgenshinApplicationTests {
 			while(rs.next()) {
 				noOfCharacters = rs.getInt(1);
 			}
-			assertEquals(noOfCharacters, 27L);
+			assertThat(noOfCharacters).isEqualTo(27L);
 		}
 		finally {
 			if(rs != null) {
