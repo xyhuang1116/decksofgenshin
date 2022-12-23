@@ -17,8 +17,14 @@ public class Chara {
     private final String codeName;
     private final String name;
     private final int hp;
+
+    @Enumerated(EnumType.STRING)
     private final Element element;
+
+    @Enumerated(EnumType.STRING)
     private final Weapon weapon;
+
+    @Enumerated(EnumType.STRING)
     private final NationOrCamp nationOrCamp;
 
     private final String desc; // the description of the card
@@ -29,7 +35,7 @@ public class Chara {
     }
 
     public enum Weapon{
-        Bow, Sword, Claymore, Catalyst, Pole, Other_Weapons
+        Bow, Sword, Claymore, Catalyst, Pole
     }
 
     public enum NationOrCamp{
