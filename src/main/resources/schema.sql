@@ -3,9 +3,9 @@ CREATE TABLE CHARA (
  code_name VARCHAR(55),
  name VARCHAR(55),
  hp INT,
- element VARCHAR(55),
- weapon VARCHAR(55),
- nation_or_camp VARCHAR(55),
+ element ENUM('CRYO', 'HYDRO', 'PYRO', 'ELECTRO', 'ANEMO', 'GEO', 'DENDRO'),
+ weapon ENUM('Bow', 'Sword', 'Claymore', 'Catalyst', 'Pole', 'Other Weapons'),
+ nation_or_camp ENUM('MONDSTADT', 'LIYUE', 'INAZUMA', 'SUMERU', 'FATUI', 'HILICHURL', 'MONSTER'),
  desc VARCHAR(255),
  PRIMARY KEY (id)
 ) AS SELECT * FROM CSVREAD('src/main/resources/chara.csv');

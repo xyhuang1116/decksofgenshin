@@ -19,7 +19,7 @@ public class Chara {
     private final int hp;
     private final Element element;
     private final Weapon weapon;
-    private final NationOrCamp nation;
+    private final NationOrCamp nationOrCamp;
 
     private final String desc; // the description of the card
     // private final String desc2; // the description of the original object in this card
