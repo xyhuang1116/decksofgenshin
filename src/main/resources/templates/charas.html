@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html xmlns:th="http:/ /www.thymeleaf.org">
-<head>
- <meta charset="utf-8">
- <meta http-equiv="x-ua-compatible" content="ie=edge">
- <title>Courses</title>
- <meta name="viewport" content="width=device-width, initial-scale=1">
- 
- <link rel="stylesheet" href="https:/ /stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
- <link rel="stylesheet" href="https:/ /use.fontawesome.com/releases/v5.4.1/css/all.css">
-
-</head>
-<body>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Charas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https:/ /stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https:/ /use.fontawesome.com/releases/v5.4.1/css/all.css">
+    </head>
+    <body>
+    <div th:switch="${#lists.size(charas)}" class="container my-5">
+        <div class="row">
+            <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div th:case="'0'">
+                        <h2>You haven't added any charas yet!</h2>
+                        <p class="text-success">Add a chara by clicking below!</p>
+                    </div>
+                    <div th:case="*">
+                    <h2 class="my-5">Charas</h2>
+                    <div style= "width: 600px; white-space: nowrap; overflow-x: scroll;">
+                        <p>
+                            <tr th:each="chara : ${charas}">
+                                <td th:text="${chara.name}"></td>
+                            </tr>
+                        </p>
+                      </div>
+                    </div>
+                </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    </body>
+ </html>

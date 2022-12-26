@@ -10,6 +10,7 @@ import java.sql.*;
 import javax.sql.DataSource;
 import javax.xml.crypto.Data;
 
+import org.assertj.core.api.Condition;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
@@ -54,13 +55,34 @@ class DecksofgenshinApplicationTests {
 	}
 
 	@Test
-	void givenDataAvailableWhenLoadFirstPageThenGetTwentySewenCharas(){
-		Pageable pageable = PageRequest.of(0, 5);
-		assertThat(charaRepository.findAll(pageable)). hasSize(5);
-		assertThat(pageable.getPageNumber()).isEqualTo(0);
+	void givenDataAvailableWhenLoadFirstPageThenGetFiveCharas(){
+		// Pageable pageable = PageRequest.of(0, 5);
+		// assertThat(charaRepository.findAll(pageable)). hasSize(5);
+		// assertThat(pageable.getPageNumber()).isEqualTo(0);
 
+		// Pageable nextPageable = pageable.next();
+		// assertThat(charaRepository.findAll(nextPageable)).hasSize(5);
+		// assertThat(nextPageable.getPageNumber()).isEqualTo(1);
+
+		// Pageable newPageable = PageRequest.of(5, 2);  // 27 charas divided into 5 pages, the last page has 2 items.
+		// assertThat(charaRepository.findAll(newPageable)). hasSize(2);
+		// assertThat(newPageable.getPageNumber()).isEqualTo(5); // If it's the last page, getPageNumber will return the last apge itself.
+
+		// Pageable pageable = PageRequest.of(0, 12);
+		// assertThat(charaRepository.findAll(pageable)). hasSize(12);
+		// assertThat(pageable.getPageNumber()).isEqualTo(0);
+
+		Pageable pageable = PageRequest.of(0, 6);
 		Pageable nextPageable = pageable.next();
-		assertThat(charaRepository.findAll(nextPageable)).hasSize(4);
-		assertThat(nextPageable.getPageNumber()).isEqualTo(1);
+
+		Condition<Chara> FirstCourseCondition = new Condition<Chara>(){
+			@Override
+			public boolean matches(Chara chara){
+				return chara.getId() == "n330525" && chara.getName().equals("Barbara");
+			}
+		};
+		assertThat(charaRepository.findAll(nextPageable)).hasSize(6);
+		assertThat(charaRepository.findAll(nextPageable)).first().has(FirstCourseCondition);
+		
 	}
 }
