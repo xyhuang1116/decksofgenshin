@@ -27,6 +27,8 @@ public class Chara {
     @Enumerated(EnumType.STRING)
     private final NationOrCamp nationOrCamp;
 
+    private final String imgUrl;
+
     private final String desc; // the description of the card
     // private final String desc2; // the description of the original object in this card
 
