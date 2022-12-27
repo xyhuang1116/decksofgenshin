@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="https:/ /use.fontawesome.com/releases/v5.4.1/css/all.css">
     </head>
     <body>
+
+    <header>
+        <div>
+            <h1>Deck of Genshin</h1>
+            <button type="button" align="right">Click Me!</button>
+        </div>
+    </header>
     <div th:switch="${#lists.size(charas)}" class="container my-5">
         <div class="row">
             <div class="col-md-2"></div>
@@ -24,6 +31,7 @@
                         <p>
                             <tr th:each="chara : ${charas}">
                                 <td th:text="${chara.name}"></td>
+                                <img th:src="${chara.imgUrl}"/>
                             </tr>
                         </p>
                       </div>
