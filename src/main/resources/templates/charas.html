@@ -11,34 +11,77 @@
     </head>
     <body>
 
-    <header>
-        <div>
-            <h1>Deck of Genshin</h1>
-            <button type="button" align="right">Click Me!</button>
-        </div>
-    </header>
-    <div th:switch="${#lists.size(charas)}" class="container my-5">
-        <div class="row">
-            <div class="col-md-2"></div>
-                <div class="col-md-8">
-                    <div th:case="'0'">
-                        <h2>You haven't added any charas yet!</h2>
-                        <p class="text-success">Add a chara by clicking below!</p>
-                    </div>
-                    <div th:case="*">
-                    <h2 class="my-5">Charas</h2>
-                    <div style= "width: 600px; white-space: nowrap; overflow-x: scroll;">
-                        <p>
-                            <tr th:each="chara : ${charas}">
-                                <td th:text="${chara.name}"></td>
-                                <img th:src="${chara.imgUrl}"/>
-                            </tr>
-                        </p>
-                      </div>
-                    </div>
+        <header>
+            <div>
+                <h1>Deck of Genshin</h1>
+                <button type="button" align="right">Click Me!</button>
+            </div>
+        </header>
+
+        <style>
+            .row{
+                display: flex;
+                flex-wrap: nowrap;
+                width: 50%;
+                height: 3%;
+            
+            }
+            .col{
+                margin: 12px;
+            }
+
+            .myBox {
+            border: none;
+            padding: 5px;
+            font: 24px/36px sans-serif;
+            width: 200px;
+            height: 200px;
+            overflow-y: scroll;
+            }
+
+            /* Scrollbar styles */
+            ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #ccc;  
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+            background: #999;  
+            }
+        </style>
+        <center>
+            <div class="row">
+                <div class="col">
+                    <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
+                </div>   
+                <div class="col">
+                    <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
                 </div>
-            <div class="col-md-2"></div>
+                <div class="col">
+                    <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
+                </div>
+            </div>
+        </center>
+    
+        <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
+
+        <div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
+            <table>
+                <tbody>
+                    <tr th:each="chara,iterStat : ${charas}">
+                    <button style=" border:none; background: transparent;;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
+                    <td th:if="${iterStat.index} % 3 == 2">
+                        </tr><tr>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-    </div>
     </body>
  </html>
+
