@@ -74,7 +74,7 @@
             <table>
                 <tbody>
                     <tr th:each="chara,iterStat : ${charas}">
-                    <button style=" border:none; background: transparent;;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
+                    <button style=" border:none; background: transparent;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
                     <td th:if="${iterStat.index} % 3 == 2">
                         </tr><tr>
                     </td>
@@ -82,6 +82,19 @@
                 </tbody>
             </table>
         </div>
+
+        <!--<div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
+            <table>
+                <tbody>
+                    <tr th:each="chara,iterStat : ${charas}">
+                    <button style=" border:none; background: transparent;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
+                    <td th:if="${iterStat.index} % 3 == 2">
+                        </tr><tr>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
     </body>
  </html>
 
