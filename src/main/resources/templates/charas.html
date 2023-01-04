@@ -17,8 +17,10 @@
                 width: 50%;
                 height: 100px;
             }
-            .col{
+            .colbutton{
+                background: transparent;
                 margin: 12px;
+                border: none;
             }
 
             .myBox {
@@ -44,7 +46,39 @@
             ::-webkit-scrollbar-thumb:hover {
             background: #999;  
             }
+
+            .cardbotton{
+                background: transparent;
+                height: 144px;
+                padding: 0;
+                margin: 5px;
+                position: relative;
+                width: 84px;
+                border: none;
+            }
         </style>
+
+        <script>
+            function addCharaToDeck(imgUrl) {
+                let elem = document.getElementById('row');
+                let imgs = elem.querySelectorAll('img');
+                for (let i = 0 ; i < imgs.length; i++) {
+                    if(imgs[i].id == 'empty'){
+                        imgs[i].id = 'full';
+                        imgs[i].src= imgUrl;
+                        break;
+                    }
+                    else{continue;}
+                }
+            }
+
+            function deleteCharaToDeck(colId) {
+                let elem = document.getElementById(colId);
+                let img = elem.querySelectorAll('img');
+                img[0].id = 'empty';
+                img[0].src = '/image/empty_chara.png';
+            }
+        </script>
 
 
         <div style="margin-bottom:0;">
@@ -60,16 +94,16 @@
         <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
             
         <center>
-        <div class="row">
-                <div class="col">
-                    <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
-                </div>   
-                <div class="col">
-                    <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
-                </div>
-                <div class="col">
-                    <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
-                </div>
+        <div class="row" id="row">
+                <button class="colbutton" id="colbutton1" onclick="deleteCharaToDeck('colbutton1')">
+                    <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
+                </button>   
+                <button class="colbutton" id="colbutton2" onclick="deleteCharaToDeck('colbutton2')">
+                    <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
+                </button>
+                <button class="colbutton" id="colbutton3" onclick="deleteCharaToDeck('colbutton3')">
+                    <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
+                </button>
         </div>
         </center>
     
@@ -79,7 +113,7 @@
             <table>
                 <tbody>
                     <tr th:each="chara,iterStat : ${charas}">
-                    <button style=" border:none; background: transparent;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
+                    <button class="cardbotton" onclick="addCharaToDeck('/image/UI_Gcg_Char_AvatarIcon_ALbedo.png')"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
                     <td th:if="${iterStat.index} % 3 == 2">
                         </tr><tr>
                     </td>
