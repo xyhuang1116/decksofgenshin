@@ -10,21 +10,12 @@
     <link rel="stylesheet" href="https:/ /use.fontawesome.com/releases/v5.4.1/css/all.css">
     </head>
     <body>
-
-        <header>
-            <div>
-                <h1>Deck of Genshin</h1>
-                <button type="button" align="right">Click Me!</button>
-            </div>
-        </header>
-
         <style>
             .row{
                 display: flex;
                 flex-wrap: nowrap;
                 width: 50%;
-                height: 3%;
-            
+                height: 100px;
             }
             .col{
                 margin: 12px;
@@ -54,8 +45,22 @@
             background: #999;  
             }
         </style>
+
+
+        <div style="margin-bottom:0;">
+            <div>
+                <div><h2 style="float: left;">Deck of Genshin</h2></div>
+                <div style="float: right;padding-top:25px;" >  
+                    <button type="button" >import</button>
+                    <button type="button" >export</button>
+                </div>
+            </div>
+        </div>
+
+        <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
+            
         <center>
-            <div class="row">
+        <div class="row">
                 <div class="col">
                     <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
                 </div>   
@@ -65,7 +70,7 @@
                 <div class="col">
                     <img th:src="@{/image/empty_chara.png}" width=70 height=70/>
                 </div>
-            </div>
+        </div>
         </center>
     
         <HR style="FILTER: alpha(opacity=100,finishopacity=0,style=3)" width="100%" color=#987cb9 SIZE=3>
@@ -82,7 +87,7 @@
                 </tbody>
             </table>
         </div>
-
+ 
         <!--<div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
             <table>
                 <tbody>
