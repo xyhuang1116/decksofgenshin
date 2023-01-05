@@ -1,28 +1,28 @@
 id,code_name,name,hp,element,weapon,nation_or_camp,face,icon
-n330500,03,Ganyu,10,CRYO,Bow,LIYUE,src/main/resources/static/image/chara/face/n330500.png,src\main\resources\static\image\chara\icon\n330500.png
-n330501,01,Kaeya,10,CRYO,Sword,MONDSTADT,src\main\resources\static\image\chara\face\n330501.png,src\main\resources\static\image\chara\icon\n330501.png
-n330502,04,Chongyun,10,CRYO,Claymore,LIYUE,src\main\resources\static\image\chara\face\n330502.png,src\main\resources\static\image\chara\icon\n330502.png
-n330503,05,Kamisato Ayaka,10,CRYO,Sword,INAZUMA,hsrc\main\resources\static\image\chara\face\n330503.png,src\main\resources\static\image\chara\icon\n330503.png
-n330504,08,Xingqiu,10,HYDRO,Sword,LIYUE,src\main\resources\static\image\chara\face\n330504.png,src\main\resources\static\image\chara\icon\n330504.png
-n330505,06,Mona,10,HYDRO,Catalyst,MONDSTADT,src\main\resources\static\image\chara\face\n330505.png,src\main\resources\static\image\chara\icon\n330505.png
-n330506,0B,Diluc,10,PYRO,Claymore,MONDSTADT,src\main\resources\static\image\chara\face\n330506.png,src\main\resources\static\image\chara\icon\n330506.png
-n330507,0D,Xiangling,10,PYRO,Pole,LIYUE,src\main\resources\static\image\chara\face\n330507.png,src\main\resources\static\image\chara\icon\n330507.png
-n330508,0C,Bennett,10,PYRO,Sword,MONDSTADT,src\main\resources\static\image\chara\face\n330508.png,src\main\resources\static\image\chara\icon\n330508.png
-n330510,0E,Yoimiya,10,PYRO,Bow,INAZUMA,src\main\resources\static\image\chara\face\n330510.png,src\main\resources\static\image\chara\icon\n330510.png
-n330511,0G,Fischl,10,ELECTRO,Bow,MONDSTADT,src\main\resources\static\image\chara\face\n330511.png,src\main\resources\static\image\chara\icon\n330511.png
-n330512,0H,Razor,10,ELECTRO,Claymore,MONDSTADT,src\main\resources\static\image\chara\face\n330512.png,src\main\resources\static\image\chara\icon\n330512.png
-n330513,0I,Keqing,10,ELECTRO,Sword,LIYUE,src\main\resources\static\image\chara\face\n330513.png,src\main\resources\static\image\chara\icon\n330513.png
-n330514,0K,Sucrose,10,ANEMO,Catalyst,MONDSTADT,src\main\resources\static\image\chara\face\n330514.png,src\main\resources\static\image\chara\icon\n330514.png
-n330515,0L,Jean,10,ANEMO,Sword,MONDSTADT,src\main\resources\static\image\chara\face\n330515.png,src\main\resources\static\image\chara\icon\n330515.png
-n330516,0O,Ningguang,10,GEO,Catalyst,LIYUE,src\main\resources\static\image\chara\face\n330516.png,src\main\resources\static\image\chara\icon\n330516.png
-n330517,0N,Noelle,10,GEO,Claymore,MONDSTADT,src\main\resources\static\image\chara\face\n330517.png,src\main\resources\static\image\chara\icon\n330517.png
-n330518,0Q,Collei,10,DENDRO,Bow,SUMERU,src\main\resources\static\image\chara\face\n330518.png,src\main\resources\static\image\chara\icon\n330518.png
-n330519,09,Rhodeia of Loch,10,HYDRO,,MONSTER,src\main\resources\static\image\chara\face\n330519.png,src\main\resources\static\image\chara\icon\n330519.png
-n330520,0F,Fatui Pyro Agent,10,PYRO,,FATUI,src\main\resources\static\image\chara\face\n330520.png,src\main\resources\static\image\chara\icon\n330520.png
-n330521,0M,Maguu Kenki,10,ANEMO,,MONSTER,src\main\resources\static\image\chara\face\n330521.png,src\main\resources\static\image\chara\icon\n330521.png
-n330522,0P,Stonehide Lawachurl,8,GEO,,HILICHURL,src\main\resources\static\image\chara\face\n330522.png,src\main\resources\static\image\chara\icon\n330522.png
-n330523,02,Diona,10,CRYO,Bow,MONDSTADT,src\main\resources\static\image\chara\face\n330523.png,src\main\resources\static\image\chara\icon\n330523.png
-n330524,0J,Cyno,10,ELECTRO,Pole,SUMERU,src\main\resources\static\image\chara\face\n330524.png,src\main\resources\static\image\chara\icon\n330524.png
-n330525,07,Barbara,10,HYDRO,Catalyst,MONDSTADT,src\main\resources\static\image\chara\face\n330525.png,src\main\resources\static\image\chara\icon\n330525.png
-n330526,0A,Mirror Maiden,10,HYDRO,,FATUI,src\main\resources\static\image\chara\face\n330526.png,src\main\resources\static\image\chara\icon\n330526.png
-n330527,0R,Jadeplume Terrorshroom,10,DENDRO,,MONSTER,src\main\resources\static\image\chara\face\n330527.png,src\main\resources\static\image\chara\icon\n330527.png
+n330500,03,Ganyu,10,CRYO,Bow,LIYUE,/image/chara/face/n330500.png,/image/chara/icon/n330500.png
+n330501,01,Kaeya,10,CRYO,Sword,MONDSTADT,/image/chara/face/n330501.png,/image/chara/icon/n330501.png
+n330502,04,Chongyun,10,CRYO,Claymore,LIYUE,/image/chara/face/n330502.png,/image/chara/icon/n330502.png
+n330503,05,Kamisato Ayaka,10,CRYO,Sword,INAZUMA,/image/chara/face/n330503.png,/image/chara/icon/n330503.png
+n330504,08,Xingqiu,10,HYDRO,Sword,LIYUE,/image/chara/face/n330504.png,/image/chara/icon/n330504.png
+n330505,06,Mona,10,HYDRO,Catalyst,MONDSTADT,/image/chara/face/n330505.png,/image/chara/icon/n330505.png
+n330506,0B,Diluc,10,PYRO,Claymore,MONDSTADT,/image/chara/face/n330506.png,/image/chara/icon/n330506.png
+n330507,0D,Xiangling,10,PYRO,Pole,LIYUE,/image/chara/face/n330507.png,/image/chara/icon/n330507.png
+n330508,0C,Bennett,10,PYRO,Sword,MONDSTADT,/image/chara/face/n330508.png,/image/chara/icon/n330508.png
+n330510,0E,Yoimiya,10,PYRO,Bow,INAZUMA,/image/chara/face/n330510.png,/image/chara/icon/n330510.png
+n330511,0G,Fischl,10,ELECTRO,Bow,MONDSTADT,/image/chara/face/n330511.png,/image/chara/icon/n330511.png
+n330512,0H,Razor,10,ELECTRO,Claymore,MONDSTADT,/image/chara/face/n330512.png,/image/chara/icon/n330512.png
+n330513,0I,Keqing,10,ELECTRO,Sword,LIYUE,/image/chara/face/n330513.png,/image/chara/icon/n330513.png
+n330514,0K,Sucrose,10,ANEMO,Catalyst,MONDSTADT,/image/chara/face/n330514.png,/image/chara/icon/n330514.png
+n330515,0L,Jean,10,ANEMO,Sword,MONDSTADT,/image/chara/face/n330515.png,/image/chara/icon/n330515.png
+n330516,0O,Ningguang,10,GEO,Catalyst,LIYUE,/image/chara/face/n330516.png,/image/chara/icon/n330516.png
+n330517,0N,Noelle,10,GEO,Claymore,MONDSTADT,/image/chara/face/n330517.png,/image/chara/icon/n330517.png
+n330518,0Q,Collei,10,DENDRO,Bow,SUMERU,/image/chara/face/n330518.png,/image/chara/icon/n330518.png
+n330519,09,Rhodeia of Loch,10,HYDRO,,MONSTER,/image/chara/face/n330519.png,/image/chara/icon/n330519.png
+n330520,0F,Fatui Pyro Agent,10,PYRO,,FATUI,/image/chara/face/n330520.png,/image/chara/icon/n330520.png
+n330521,0M,Maguu Kenki,10,ANEMO,,MONSTER,/image/chara/face/n330521.png,/image/chara/icon/n330521.png
+n330522,0P,Stonehide Lawachurl,8,GEO,,HILICHURL,/image/chara/face/n330522.png,/image/chara/icon/n330522.png
+n330523,02,Diona,10,CRYO,Bow,MONDSTADT,/image/chara/face/n330523.png,/image/chara/icon/n330523.png
+n330524,0J,Cyno,10,ELECTRO,Pole,SUMERU,/image/chara/face/n330524.png,/image/chara/icon/n330524.png
+n330525,07,Barbara,10,HYDRO,Catalyst,MONDSTADT,/image/chara/face/n330525.png,/image/chara/icon/n330525.png
+n330526,0A,Mirror Maiden,10,HYDRO,,FATUI,/image/chara/face/n330526.png,/image/chara/icon/n330526.png
+n330527,0R,Jadeplume Terrorshroom,10,DENDRO,,MONSTER,/image/chara/face/n330527.png,/image/chara/icon/n330527.png
