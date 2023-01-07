@@ -59,13 +59,13 @@
         </style>
 
         <script>
-            function addCharaToDeck(imgUrl) {
+            function addCharaToDeck(id) {
                 let elem = document.getElementById('row');
                 let imgs = elem.querySelectorAll('img');
                 for (let i = 0 ; i < imgs.length; i++) {
                     if(imgs[i].id == 'empty'){
                         imgs[i].id = 'full';
-                        imgs[i].src= imgUrl;
+                        imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
                         break;
                     }
                     else{continue;}
@@ -113,7 +113,7 @@
             <table>
                 <tbody>
                     <tr th:each="chara,iterStat : ${charas}">
-                    <button class="cardbotton" th:attr="onclick=|addCharaToDeck('${chara.icon}')|"><img th:src="${chara.face}" width=95 height=162 /></button>
+                    <button class="cardbotton" th:attr="onclick=|addCharaToDeck('${chara.id}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=95 height=162 /></button>
                     
                     <td th:if="${iterStat.index} % 3 == 2">
                         </tr><tr>

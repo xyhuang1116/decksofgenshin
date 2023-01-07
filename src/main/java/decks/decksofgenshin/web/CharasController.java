@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Controller
-@RequestMapping("/charas")
+@RequestMapping("/")
 public class CharasController {
 
     @Autowired
