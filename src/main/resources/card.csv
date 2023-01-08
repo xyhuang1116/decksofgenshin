@@ -1,0 +1,120 @@
+id,name,type,subtype,tag,cost,code_name
+n330500,Undivided Heart,equip,talent,,5,0S
+n330501,Cold-Blooded Strike,equip,talent,,4,0T
+n330502,Steady Breathing,equip,talent,,4,0U
+n330503,Kanten Senmyou Blessing,equip,talent,,2,0V
+n330504,The Scent Remained,equip,talent,,4,0W
+n330505,Prophecy of Submersion,equip,talent,,3,0X
+n330506,Flowing Flame,equip,talent,,3,0Y
+n330507,Crossfire,equip,talent,,4,0Z
+n330508,Grand Expectation,equip,talent,,4,10
+n330510,Naganohara Meteor Swarm,equip,talent,,2,11
+n330511,Stellar Predator,equip,talent,,3,12
+n330512,Awakening,equip,talent,,4,13
+n330513,Thundering Penance,equip,talent,,3,14
+n330514,Chaotic Entropy,equip,talent,,3,15
+n330515,Lands of Dandelion,equip,talent,,4,16
+n330516,Strategic Reserve,equip,talent,,4,17
+n330517,I Got Your Back,equip,talent,,3,18
+n330518,Floral Sidewinder,equip,talent,,3,19
+n330519,Streaming Surge,equip,talent,,4,1A
+n330520,Paid in Full,equip,talent,,3,1B
+n330521,Transcendent Automaton,equip,talent,,3,1C
+n330522,Stonehide Reforged,equip,talent,,4,1D
+n330523,"Shaken, Not Purred",equip,talent,,4,1E
+n330524,Featherfall Judgment,equip,talent,,3,1F
+n330525,Glorious Season,equip,talent,,4,1G
+n330526,Mirror Cage,equip,talent,,4,1H
+n330527,Proliferating Spores,equip,talent,,3,1I
+n331000,Magic Guide,equip,weapon,catalyst,2,1J
+n331001,Sacrificial Fragments,equip,weapon,catalyst,3,1K
+n331002,Skyward Atlas,equip,weapon,catalyst,3,1L
+n331003,Raven Bow,equip,weapon,bow,2,1M
+n331004,Sacrificial Bow,equip,weapon,bow,3,1N
+n331005,Skyward Harp,equip,weapon,bow,3,1O
+n331006,White Iron Greatsword,equip,weapon,claymore,2,1P
+n331007,Sacrificial Greatsword,equip,weapon,claymore,3,1Q
+n331008,Wolf’s Gravestone,equip,weapon,claymore,3,1R
+n331009,White Tassel,equip,weapon,pole,2,1S
+n331010,Lithic Spear,equip,weapon,pole,3,1T
+n331011,Skyward Spine,equip,weapon,pole,3,1U
+n331012,Traveler's Handy Sword,equip,weapon,sword,2,1V
+n331013,Sacrificial Sword,equip,weapon,sword,3,1W
+n331014,Aquila Favonia,equip,weapon,sword,3,1X
+n331015,Adventurer's Bandana,equip,artifact,,1,1Y
+n331016,Lucky Dog's Silver Circlet,equip,artifact,,2,1Z
+n331017,Traveling Doctor's Handkerchief,equip,artifact,,1,20
+n331018,Gambler's Earrings,equip,artifact,,1,21
+n331019,Instructor's Cap,equip,artifact,,2,22
+n331020,Exile's Circlet,equip,artifact,,2,23
+n331021,Broken Rime's Echo,equip,artifact,,2,24
+n331022,Blizzard Strayer,equip,artifact,,3,25
+n331023,Wine-Stained Tricorne,equip,artifact,,2,26
+n331024,Heart of Depth,equip,artifact,,3,27
+n331025,Witch's Scorching Hat,equip,artifact,,2,28
+n331026,Crimson Witch of Flames,equip,artifact,,3,29
+n331027,Thunder Summoner's Crown,equip,artifact,,2,2A
+n331028,Thundering Fury,equip,artifact,,3,2B
+n331029,Viridescent Venerer's Diadem,equip,artifact,,2,2C
+n331030,Viridescent Venerer,equip,artifact,,3,2D
+n331031,Mask of Solitude Basalt,equip,artifact,,2,2E
+n331032,Archaic Petra,equip,artifact,,3,2F
+n331033,Laurel Coronet,equip,artifact,,2,2G
+n331034,Deepwood Memories,equip,artifact,,3,2H
+n332000,Liyue Harbor Wharf,support,place,,2,2I
+n332001,Knights of Favonius Library,support,place,,1,2J
+n332002,Jade Chamber,support,place,,1,2K
+n332003,Dawn Winery,support,place,,2,2L
+n332004,Wangshu Inn,support,place,,2,2M
+n332005,Favonius Cathedral,support,place,,2,2N
+n332006,Paimon,support,companion,,3,2O
+n332007,Katheryne,support,companion,,2,2P
+n332008,Timaeus,support,companion,,2,2Q
+n332009,Wagner,support,companion,,2,2R
+n332010,Chef Mao,support,companion,,1,2S
+n332011,Tubby,support,companion,,2,2T
+n332012,Timmie,support,companion,,0,2U
+n332013,Liben,support,companion,,0,2V
+n332014,Chang the Ninth,support,companion,,0,2W
+n332015,Ellin,support,companion,,2,2X
+n332016,Iron Tongue Tian,support,companion,,2,2Y
+n332017,Liu Su,support,companion,,1,2Z
+n332018,Parametric Transformer,support,item,,2,30
+n332019,NRE,support,item,,2,31
+n333000,Elemental Resonance: Woven Ice,event,resonance,,0,32
+n333001,Elemental Resonance: Shattering Ice,event,resonance,,1,33
+n333002,Elemental Resonance: Woven Waters,event,resonance,,0,34
+n333003,Elemental Resonance: Soothing Water,event,resonance,,1,35
+n333004,Elemental Resonance: Woven Flames,event,resonance,,0,36
+n333005,Elemental Resonance: Fervent Flames,event,resonance,,1,37
+n333006,Elemental Resonance: Woven Thunder,event,resonance,,0,38
+n333007,Elemental Resonance: High Voltage,event,resonance,,1,39
+n333008,Elemental Resonance: Woven Winds,event,resonance,,0,3A
+n333009,Elemental Resonance: Impetuous Winds,event,resonance,,1,3B
+n333010,Elemental Resonance: Woven Stone,event,resonance,,0,3C
+n333011,Elemental Resonance: Enduring Rock,event,resonance,,1,3D
+n333012,Elemental Resonance: Woven Weeds,event,resonance,,0,3E
+n333013,Elemental Resonance: Sprawling Greenery,event,resonance,,1,3F
+n333014,The Bestest Travel Companion!,event,normal,,2,3G
+n333015,Changing Shifts,event,normal,,0,3H
+n333016,Toss-Up,event,normal,,0,3I
+n333017,Strategize,event,normal,,1,3J
+n333018,I Haven't Lost Yet!,event,normal,,0,3K
+n333019,Leave it to Me!,event,normal,,0,3L
+n333020,When the Crane Returned,event,normal,,1,3M
+n333021,Starsigns,event,normal,,2,3N
+n333022,Calx's Arts,event,normal,,1,3O
+n333023,Master of Weaponry,event,normal,,0,3P
+n333024,Blessing of the Divine Relic's Installation,event,normal,,0,3Q
+n333025,Quick Knit,event,normal,,1,3R
+n333026,Send Off,event,normal,,2,3S
+n333027,Guardian's Oath,event,normal,,4,3T
+n333028,Abyssal Summons,event,normal,,2,3U
+n333029,Jueyun Guoba,event,food,,0,3V
+n333030,Adeptus' Temptation,event,food,,2,3W
+n333031,Lotus Flower Crisp,event,food,,1,3X
+n333032,Northern Smoked Chicken,event,food,,0,3Y
+n333033,Sweet Madame,event,food,,0,3Z
+n333034,Mondstadt Hash Brown,event,food,,1,40
+n333035,Mushroom Pizza,event,food,,1,41
+n333036,Minty Meat Rolls,event,food,,1,42

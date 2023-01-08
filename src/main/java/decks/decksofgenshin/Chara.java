@@ -27,17 +27,12 @@ public class Chara {
     @Enumerated(EnumType.STRING)
     private final NationOrCamp nationOrCamp;
 
-    private final String face;
-
-    private final String icon; // the description of the card
-    // private final String desc2; // the description of the original object in this card
-
     public enum Element{
         CRYO, HYDRO, PYRO, ELECTRO, ANEMO, GEO, DENDRO
     }
 
     public enum Weapon{
-        Bow, Sword, Claymore, Catalyst, Pole
+        BOW, SWORD, CLAYMORE, CATALYST, POLE
     }
 
     public enum NationOrCamp{
