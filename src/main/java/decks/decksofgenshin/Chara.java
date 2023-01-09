@@ -18,24 +18,9 @@ public class Chara {
     private final String name;
     private final int hp;
 
-    @Enumerated(EnumType.STRING)
-    private final Element element;
+    private final String element;
 
-    @Enumerated(EnumType.STRING)
-    private final Weapon weapon;
+    private final String weapon;
 
-    @Enumerated(EnumType.STRING)
-    private final NationOrCamp nationOrCamp;
-
-    public enum Element{
-        CRYO, HYDRO, PYRO, ELECTRO, ANEMO, GEO, DENDRO
-    }
-
-    public enum Weapon{
-        BOW, SWORD, CLAYMORE, CATALYST, POLE
-    }
-
-    public enum NationOrCamp{
-        MONDSTADT, LIYUE, INAZUMA, SUMERU, FATUI, HILICHURL, MONSTER
-    }
+    private final String nationOrCamp;
 }

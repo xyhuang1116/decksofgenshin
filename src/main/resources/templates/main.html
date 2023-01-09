@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http:/ /www.thymeleaf.org">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Charas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https:/ /stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https:/ /use.fontawesome.com/releases/v5.4.1/css/all.css">
+    </head>
+    <body>
+        <style>
+            .row{
+                display: flex;
+                flex-wrap: nowrap;
+                width: 80%;
+                height: 100px;
+            }
+            .colbutton{
+                background: transparent;
+                margin: 5px;
+                border: none;
+            }
+
+            .myBox {
+            border: none;
+            padding: 5px;
+            font: 24px/36px sans-serif;
+            width: 200px;
+            height: 200px;
+            overflow-y: scroll;
+            }
+
+            /* Scrollbar styles */
+            ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background: #ccc;  
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+            background: #999;  
+            }
+
+            .cardbotton{
+                background: transparent;
+                height: 144px;
+                padding: 0;
+                margin: 10px;
+                position: relative;
+                width: 84px;
+                border: none;
+            }
+        </style>
+
+        <script>
+            function addCharaToDeck(id) {
+                let elem = document.getElementById('row');
+                let imgs = elem.querySelectorAll('img');
+                for (let i = 0 ; i < imgs.length; i++) {
+                    if(imgs[i].id == 'empty'){
+                        imgs[i].id = 'full';
+                        imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
+                        break;
+                    }
+                    else{continue;}
+                }
+            }
+
+            function deleteCharaToDeck(colId) {
+                let elem = document.getElementById(colId);
+                let img = elem.querySelectorAll('img');
+                img[0].id = 'empty';
+                img[0].src = '/image/empty_chara.png';
+            }
+        </script>
+
+
+        <div style="margin-bottom:0;">
+            <div>
+                <div><h3 style="float: left;">Deck of Genshin</h3></div>
+                <div style="float: right;padding-top:25px;" >  
+                    <input type="button" >import</input>
+                    <input type="button" >export</input>
+                </div>
+            </div>
+        </div>
+
+        <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
+            
+        <center>
+        <div class="row" id="row">
+                <button class="colbutton" id="colbutton1" onclick="deleteCharaToDeck('colbutton1')">
+                    <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
+                </button>   
+                <button class="colbutton" id="colbutton2" onclick="deleteCharaToDeck('colbutton2')">
+                    <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
+                </button>
+                <button class="colbutton" id="colbutton3" onclick="deleteCharaToDeck('colbutton3')">
+                    <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
+                </button>
+        </div>
+        </center>
+    
+        <HR style="width: 100%; border: 0; height: 3px; background-color: rgb(108, 42, 117); opacity: 0.2" SIZE=3>
+
+        <div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
+            <table>
+                <tbody>
+                    <tr th:each="chara,iterStat : ${charas}">
+                    <button class="cardbotton" th:attr="onclick=|addCharaToDeck('${chara.id}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=95 height=162 /></button>
+                    
+                    <td th:if="${iterStat.index} % 3 == 2">
+                        </tr><tr>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+ 
+        <!--<div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
+            <table>
+                <tbody>
+                    <tr th:each="chara,iterStat : ${charas}">
+                    <button style=" border:none; background: transparent;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
+                    <td th:if="${iterStat.index} % 3 == 2">
+                        </tr><tr>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>-->
+    </body>
+ </html>
+

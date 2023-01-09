@@ -18,24 +18,9 @@ public class Card {
     private final String name;
     private final int cost;
 
-    @Enumerated(EnumType.STRING)
-    private final Type type;
+    private final String type;
 
-    @Enumerated(EnumType.STRING)
-    private final SubType subType;
+    private final String subType;
 
-    @Enumerated(EnumType.STRING)
-    private final Tag tag;
-
-    public enum Type{
-        EQUIP, SUPPORT, EVENT
-    }
-
-    public enum SubType{
-        TALENT, WEAPON, ARTIFACT, PLACE, COMPANION, ITEM, RESONANCE, NORMAL, FOOD
-    }
-
-    public enum Tag{
-        CRYO, HYDRO, PYRO, ELECTRO, ANEMO, GEO, DENDRO, BOW, SWORD, CLAYMORE, CATALYST, POLE, MONSTER
-    }
+    private final String tag;
 }
