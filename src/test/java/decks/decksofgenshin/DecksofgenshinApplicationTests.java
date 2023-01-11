@@ -40,12 +40,12 @@ class DecksofgenshinApplicationTests {
 		ResultSet rs = null;
 		int noOfCharacters = 0;
 
-		try(PreparedStatement ps = dataSource.getConnection().prepareStatement("SELECT COUNT(1) FROM CHARA")) {
+		try(PreparedStatement ps = dataSource.getConnection().prepareStatement("SELECT COUNT(1) FROM CARD")) {
 			rs = ps.executeQuery();
 			while(rs.next()) {
 				noOfCharacters = rs.getInt(1);
 			}
-			assertThat(noOfCharacters).isEqualTo(27L);
+			assertThat(noOfCharacters).isEqualTo(119L);
 		}
 		finally {
 			if(rs != null) {

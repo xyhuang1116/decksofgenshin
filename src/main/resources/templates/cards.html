@@ -3,45 +3,77 @@
     <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Charas</title>
+    <title>Cards</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <link rel="stylesheet" href="https:/ /stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
-    <link rel="stylesheet" href="https:/ /use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     </head>
+
     <body>
         <style>
+            
             .container{
-                width: 80%;
-                height: 100%;
+                margin: 0 auto;
+                height: 80%;
+                width: 100%;
                 position: fixed;
-                left: 0px;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: #222;
-                border-radius: 0 15px 15px 0;
+                transform: translateY(120%);
+                background-color: rgb(239, 237, 237);
                 overflow: hidden;
+                z-index: 3;
+                border-radius: 15px 15px 0 0;
                 transition: 0.3s;
+                
             }
+
+            .container .top{
+                width: calc(100% - 30px);
+                margin-left: 30px;
+                height: 20%;
+                background-color: rgb(239, 237, 237);
+                border-radius: 0 0 0 20px;
+                transition: 0.2s;
+            }
+            
+            .container .bottom{
+                width: calc(100% - 30px);
+                height: 100%;
+                margin-left: 30px;
+                background-color: rgb(239, 237, 237);
+                border-radius: 20px 0 0 0;
+            }
+
             .row{
                 display: flex;
                 flex-wrap: nowrap;
                 width: 80%;
-                height: 100px;
+                height: 80px;
+                z-index: 3;
+                position: fixed;
+
+                background-color: rgb(239, 237, 237);
+                overflow: hidden;
+
+                border-radius: 15px 15px 15px 15px;
+                bottom: 0;
+                margin: auto;
+                left: 0;
+                right: 0;
+                transition: 0.3s;
             }
-            .colbutton{
-                background: transparent;
-                margin: 5px;
-                border: none;
-            }
+    
 
             .myBox {
             border: none;
             padding: 5px;
             font: 24px/36px sans-serif;
             width: 200px;
-            height: 200px;
+            height: 250px;
             overflow-y: scroll;
+            left:0;
+            right: 0;
+
             }
 
             /* Scrollbar styles */
@@ -59,15 +91,40 @@
             background: #999;  
             }
 
-            .cardbotton{
+            .colbutton{
                 background: transparent;
-                height: 144px;
-                padding: 0;
-                margin: 10px;
+                height: 70px;
+                padding: 5px;
                 position: relative;
-                width: 84px;
+                width: 70px;
+                border: none;
+                margin: 0 auto;
+            }
+
+            .colbutton:focus{outline: none;}
+
+            .cardbutton{
+                background: transparent;
+                height: 162px;
+                padding: 0;
+                margin: 5px;
+                position: relative;
+                width: 95px;
                 border: none;
             }
+            .cardbutton:focus{outline: none;}
+
+            .precardbutton{
+                background: transparent;
+                height: 85px;
+                padding: 0;
+                margin: 5px;
+                position: relative;
+                width: 50px;
+                border: none;
+            }
+            .precardbutton:focus{outline: none;}
+
         </style>
 
         <script>
@@ -77,7 +134,7 @@
                 for (let i = 0 ; i < imgs.length; i++) {
                     if(imgs[i].id == 'empty'){
                         imgs[i].id = 'full';
-                        imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
+                        imgs[i].src= '/image/chara/'.concat(id).concat('.png');
                         break;
                     }
                     else{continue;}
@@ -90,10 +147,44 @@
                 img[0].id = 'empty';
                 img[0].src = '/image/empty_chara.png';
             }
+
+            function unfoldContainer(){
+                document.getElementById('row').style.bottom = '80%';
+                document.getElementById('container').style.transform = 'translateY(20%)';
+                document.getElementById('arrow').src = '/image/downArrow.png';
+
+                let btn = document.getElementById('unfold');
+                btn.setAttribute('onclick' , 'foldContainer()');
+                btn.id = 'fold';
+            }
+
+            function foldContainer(){
+                document.getElementById('row').style.bottom = 0;
+                document.getElementById('container').style.transform = 'translateY(120%)';
+                document.getElementById('arrow').src = '/image/arrow.png';
+
+                let btn = document.getElementById('fold');
+                btn.setAttribute('onclick' , 'unfoldContainer()');
+                btn.id = 'unfold';
+            }
         </script>
 
-        <div class="container">
+        <div style="margin-bottom:0;">
+            <div>
+                <div><h3 style="float: left;">Deck of Genshin</h3></div>
+                <div style="float: right;padding-top:3px;" >  
+                    <button style="height:30px;width:30px;border:none;" id="import" >I</button>
+                    <button style="height:30px;width:30px;border:none;" id="export">E</button>
+                </div>
+            </div>
+        </div>
+
+        <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
+        
+
+        <div>
             <div class="row" id="row">
+           
                 <button class="colbutton" id="colbutton1" onclick="deleteCharaToDeck('colbutton1')">
                     <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
                 </button>   
@@ -103,30 +194,25 @@
                 <button class="colbutton" id="colbutton3" onclick="deleteCharaToDeck('colbutton3')">
                     <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
                 </button>
-            </div>
-        </div>
 
-        <div style="margin-bottom:0;">
-            <div>
-                <div><h3 style="float: left;">Deck of Genshin</h3></div>
-                <div style="float: right;padding-top:25px;" >  
-                    <input type="button" >import</input>
-                    <input type="button" >export</input>
-                </div>
+                <button class="colbutton" style="margin-top:5px;" id="unfold" onclick="unfoldContainer()">
+                    <img th:src="@{/image/arrow.png}" id="arrow" width=35 height=35/>
+                </button>
             </div>
-        </div>
-
-        <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
             
-        
-    
-        <!-- <HR style="width: 100%; border: 0; height: 3px; background-color: rgb(108, 42, 117); opacity: 0.2" SIZE=3> -->
+            <div class="container" id="container" style="width: auto;">
+                
+                
+            </div>
+        </div>  
 
-        <div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
+        <div class="myBox" id="cards" style="height: 600px; width: 100%; z-index: 1; white-space: pre-line; ">
             <table>
                 <tbody>
-                    <tr th:each="chara,iterStat : ${charas}">
-                    <button class="cardbotton" th:attr="onclick=|addCharaToDeck('${chara.id}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=95 height=162 /></button>
+                    <tr th:each="card,iterStat : ${cards}">
+                    <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${card.id}')|">
+                        <img th:src="'/image/card/'+${card.type}+ '/' + ${card.subType} + '/' + ${card.id} + '.png'" width=84 height=144 />
+                    </button>
                     
                     <td th:if="${iterStat.index} % 3 == 2">
                         </tr><tr>
@@ -135,19 +221,7 @@
                 </tbody>
             </table>
         </div>
- 
-        <!--<div class="myBox" style="height: 500px; width: 100%; white-space: pre-line; ">
-            <table>
-                <tbody>
-                    <tr th:each="chara,iterStat : ${charas}">
-                    <button style=" border:none; background: transparent;"><img th:src="${chara.imgUrl}" width=84 height=144 /></button>
-                    <td th:if="${iterStat.index} % 3 == 2">
-                        </tr><tr>
-                    </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>-->
+
     </body>
  </html>
 
