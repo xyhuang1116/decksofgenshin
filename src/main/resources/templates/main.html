@@ -128,13 +128,31 @@
         </style>
 
         <script>
-            function addCharaToDeck(id) {
+            let charas = new Map();
+            let key = 1;
+
+            function addCharaToDeck(id,codeName) {
+
                 let elem = document.getElementById('row');
                 let imgs = elem.querySelectorAll('img');
+
                 for (let i = 0 ; i < imgs.length; i++) {
                     if(imgs[i].id == 'empty'){
+
                         imgs[i].id = 'full';
                         imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
+
+
+                        //TO-DO Bug
+                        while(charas.has(key)){
+                            key++;
+                            if(key == 4 && !charas.has(1)){key =1;break;}
+                        }
+                        charas.set(key.toString(),codeName);
+                        key++;
+
+                        addExportBox();
+
                         break;
                     }
                     else{continue;}
@@ -142,10 +160,21 @@
             }
 
             function deleteCharaToDeck(colId) {
+
                 let elem = document.getElementById(colId);
                 let img = elem.querySelectorAll('img');
+
                 img[0].id = 'empty';
                 img[0].src = '/image/empty_chara.png';
+
+                let deleteKey = colId.replace("colbutton", "");
+
+                if(charas.has(deleteKey)){
+                    charas.delete(deleteKey);
+                    key = deleteKey;
+
+                    addExportBox();
+                }
             }
 
             function unfoldContainer(){
@@ -168,9 +197,20 @@
                 btn.id = 'unfold';
             }
 
+            function addExportBox(){
+                let deck = '';
+                for(let amount of charas.values()){
+                    deck = deck + amount;
+                }
+            
+                let deckCode = document.getElementById('deckCode');
+                deckCode.value = deck;
+            }
+
           
         </script>
 
+    <!--Header-->
         <div style="margin-bottom:0;">
             <div>
                 <div><h3 style="float: left;">Deck of Genshin</h3></div>
@@ -179,14 +219,14 @@
                         <input type="submit" name="post-Cards" value="post-Cards" style="height:30px;width:30px;border:none;" id="post-Cards" >Cards</input>
                     </form>
                     <button style="height:30px;width:30px;border:none;" id="import" >I</button>
-                    <button style="height:30px;width:30px;border:none;" id="export">E</button>
+                    <button style="height:30px;width:30px;border:none;" id="export" onclick="addExportBox()">E</button>
                 </div>
             </div>
         </div>
 
-        <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
-        
-
+        <div id = 'deckCodeBox'><input type="text" id = "deckCode" value=""></div>
+        <!--<HR  style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">-->
+    <!--Choosen charas Gallery-->
         <div>
             <div class="row" id="row">
            
@@ -204,14 +244,14 @@
                     <img th:src="@{/image/arrow.png}" id="arrow" width=35 height=35/>
                 </button>
             </div>
-            
+    <!--Choosen Card Gallery-->        
             <div class="container" id="container" style="width: auto;">
                 
                 <div class="myBox" style="height: 100%; width: 100%; z-index: 0; white-space: pre-line; ">
                     <table>
                         <tbody>
                             <tr th:each="chara,iterStat : ${charas}">
-                            <button class="precardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=50 height=85 /></button>
+                            <button class="precardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}','${chara.codeName}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=50 height=85 /></button>
                             
                             <td th:if="${iterStat.index} % 3 == 2">
                                 </tr><tr>
@@ -223,12 +263,12 @@
             </div>
         </div>  
 
-
+    <!--Card Gallery-->
         <div class="myBox" id="charas" style="height: 600px; width: 100%; z-index: 0; white-space: pre-line; ">
             <table>
                 <tbody>
                     <tr th:each="chara,iterStat : ${charas}">
-                    <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=84 height=144 /></button>
+                    <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}','${chara.codeName}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=84 height=144 /></button>
                     
                     <td th:if="${iterStat.index} % 3 == 2">
                         </tr><tr>
