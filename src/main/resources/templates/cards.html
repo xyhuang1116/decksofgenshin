@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="/mystyle.css">
-    <script src="/cardScripts.js"></script>
-    <script src="/commonScripts.js"></script>
+    <script type="text/javascript" src="/cardScript.js"></script>
+    <script type="text/javascript" src="/commonScript.js"></script>
     </head>
 
     <body>
@@ -45,23 +45,31 @@
                 </button>
             </div>
             
-            <div class="container" id="container" style="width: auto;">
+            <div class="container" id="container" style="width: 100%;">
                 
-                
+                <div class="myBox" id="selectedCards" style="height: 600px; width: 100%; z-index: 0; white-space: pre-line; ">
+                    <table>
+                        <tbody id="cardList">
+                        <!--    <tr th:each="card,iterStat : ${cards}">
+                            <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${card.id}')|">
+                                <img th:src="'/image/card/'+${card.type}+ '/' + ${card.subType} + '/' + ${card.id} + '.png'" width=84 height=144 />
+                            </button>
+                        </tr>
+                           -->
+                        </tbody>
+                    </table>
+                </div>
+        
             </div>
         </div>  
 
-        <div class="myBox" id="cards" style="height: 600px; width: 100%; z-index: 1; white-space: pre-line; ">
+        <div class="myBox" id="cards" style="height: 600px; width: 100%; z-index:0; white-space: pre-line; ">
             <table>
                 <tbody>
                     <tr th:each="card,iterStat : ${cards}">
-                    <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${card.id}')|">
+                    <button class="cardbutton" th:attr="onclick=|addCardToDeck('${card.id}','${card.codeName}','${card.type}','${card.subType}')|">
                         <img th:src="'/image/card/'+${card.type}+ '/' + ${card.subType} + '/' + ${card.id} + '.png'" width=84 height=144 />
                     </button>
-                    
-                    <td th:if="${iterStat.index} % 3 == 2">
-                        </tr><tr>
-                    </td>
                     </tr>
                 </tbody>
             </table>

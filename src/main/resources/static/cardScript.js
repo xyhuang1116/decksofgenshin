@@ -1,30 +1,64 @@
 var cardQueue = [];
 for(let i = 1;i<=30;i++){
-    cardQueue.push(i);
+    c.push(i);
 }
+let elemNum = (window.innerWidth *0.8 /95 -1) | 0 ;
+
+let br = -1;
 
 localStorage.clear();
 
-function addCharaToDeck(id,codeName) {
+function addCardToDeck(id,codeName,type,subType) {
 
-    let elem = document.getElementById('row');
-    let imgs = elem.querySelectorAll('img');
+    let elem = document.getElementById('cardList');
+    let th = document.createElement('th');
+    let botton = document.createElement('button');
+    let img = document.createElement('img');
 
-    for (let i = 0 ; i < imgs.length; i++) {
-        if(imgs[i].id == 'empty'){
+    th.id = -cardQueue.shift().toString();
 
-            imgs[i].id = 'full';
-            imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
+    botton.className = 'cardbutton';
+    //TODO 
+    botton.onclick = 'deleteCardToDeck(' + id + ')';
 
-            localStorage.setItem(queue.shift().toString(),codeName);
+    img.src = '/image/card/' + type + '/' + subType + '/' + id + '.png'
+    img.width = 50;
+    img.height = 85;
 
-            addExportBox();
+    if(br == elemNum){
+        elem.append(document.createElement('tr'));
+        br = 0;
+    }else{br++;}
 
-            break;
-        }
-        else{continue;}
-    }
+    elem.append(th);
+    th.append(botton);
+    botton.append(img);
+
+    // imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
+
+    // localStorage.setItem(queue.shift().toString(),codeName);
+
+    // addExportBox();
+
 }
+
+function deleteCardToDeck(colId) {
+
+    let elem = document.getElementById(colId);
+    let img = elem.querySelectorAll('img');
+
+    let deleteKey = colId.replace("colbutton", "");
+
+
+    localStorage.removeItem(deleteKey);
+    queue.push(parseInt(deleteKey));
+
+    addExportBox();
+
+    img[0].id = 'empty';
+    img[0].src = '/image/empty_chara.png';
+}
+
 
 function deleteCharaToDeck(colId) {
 

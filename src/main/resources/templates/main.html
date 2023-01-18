@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link rel="stylesheet" href="/mystyle.css">
-    <script src="/mainScripts.js"></script>
-    <script src="/commonScripts.js"></script>
+    <script type="text/javascript" src="/mainScript.js"></script>
+    <script type="text/javascript" src="/commonScript.js"></script>
     </head>
 
     <body>
@@ -57,11 +57,11 @@
                         <tbody>
                             <tr th:each="chara,iterStat : ${charas}">
                             <button class="precardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}','${chara.codeName}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=50 height=85 /></button>
-                            
-                            <td th:if="${iterStat.index} % 3 == 2">
-                                </tr><tr>
-                            </td>
                             </tr>
+                            <!-- <td th:if="${iterStat.index} % 3 == 2">
+                              
+                            </td> -->
+                           
                         </tbody>
                     </table>
                 </div>   
@@ -73,11 +73,8 @@
             <table>
                 <tbody>
                     <tr th:each="chara,iterStat : ${charas}">
-                    <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}','${chara.codeName}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=84 height=144 /></button>
-                    
-                    <td th:if="${iterStat.index} % 3 == 2">
-                        </tr><tr>
-                    </td>
+                    <button class="cardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}','${chara.codeName}')|">
+                        <img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=84 height=144 /></button>
                     </tr>
                 </tbody>
             </table>
