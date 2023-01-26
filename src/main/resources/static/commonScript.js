@@ -4,7 +4,8 @@ function unfoldContainer(){
     document.getElementById('arrow').src = '/image/downArrow.png';
 
     let btn = document.getElementById('unfold');
-    btn.setAttribute('onclick' , 'foldContainer()');
+
+    btn.addEventListener("click",foldContainer,{once:true});
     btn.id = 'fold';
 }
 
@@ -14,6 +15,8 @@ function foldContainer(){
     document.getElementById('arrow').src = '/image/arrow.png';
 
     let btn = document.getElementById('fold');
-    btn.setAttribute('onclick' , 'unfoldContainer()');
+
+   
+    btn.addEventListener("click",unfoldContainer,{once:true});
     btn.id = 'unfold';
 }

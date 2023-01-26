@@ -1,3 +1,6 @@
+//TODO How to communicate deck message when posting and sent back to database
+//TODO queue cardQueue localStorage
+
 var queue = [];
 for(let i = 1;i<=3;i++){  // queue is now [1, 2, 3]
     queue.push(i); 
