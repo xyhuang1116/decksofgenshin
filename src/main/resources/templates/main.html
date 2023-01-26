@@ -49,22 +49,10 @@
                     <img th:src="@{/image/arrow.png}" id="arrow" width=35 height=35/>
                 </button>
             </div>
-    <!--Choosen Card Gallery-->        
+    <!--Chosen Card Gallery-->        
             <div class="container" id="container" style="width: auto;">
                 
-                <div class="myBox" style="height: 100%; width: 100%; z-index: 0; white-space: pre-line; ">
-                    <table>
-                        <tbody>
-                            <tr th:each="chara,iterStat : ${charas}">
-                            <button class="precardbutton" th:attr="onclick=|addCharaToDeck('${chara.id}','${chara.codeName}')|"><img th:src="'/image/chara/face/'+${chara.id}+'.png'" width=50 height=85 /></button>
-                            </tr>
-                            <!-- <td th:if="${iterStat.index} % 3 == 2">
-                              
-                            </td> -->
-                           
-                        </tbody>
-                    </table>
-                </div>   
+           
             </div>
         </div>  
 

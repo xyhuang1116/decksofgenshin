@@ -1,6 +1,9 @@
+//TODO How to communicate deck message when posting and sent back to database
+//TODO queue cardQueue localStorage
+
 var cardQueue = [];
 for(let i = 1;i<=30;i++){
-    c.push(i);
+    cardQueue.push(i);
 }
 let elemNum = (window.innerWidth *0.8 /95 -1) | 0 ;
 
@@ -14,16 +17,18 @@ function addCardToDeck(id,codeName,type,subType) {
     let th = document.createElement('th');
     let botton = document.createElement('button');
     let img = document.createElement('img');
+    let key = cardQueue.shift().toString();
 
-    th.id = -cardQueue.shift().toString();
+    th.id = 'th_'+key;
 
     botton.className = 'cardbutton';
-    //TODO 
-    botton.onclick = 'deleteCardToDeck(' + id + ')';
+    botton.id = id+'botton';
+    botton.addEventListener("click" , function() { deleteCardToDeck(th.id); },{once:true} );
 
     img.src = '/image/card/' + type + '/' + subType + '/' + id + '.png'
     img.width = 50;
     img.height = 85;
+
 
     if(br == elemNum){
         elem.append(document.createElement('tr'));
@@ -34,29 +39,20 @@ function addCardToDeck(id,codeName,type,subType) {
     th.append(botton);
     botton.append(img);
 
-    // imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
-
-    // localStorage.setItem(queue.shift().toString(),codeName);
-
-    // addExportBox();
-
+    localStorage.setItem(key,codeName);
+    addExportBox();
 }
 
-function deleteCardToDeck(colId) {
+function deleteCardToDeck(thId) {
 
-    let elem = document.getElementById(colId);
-    let img = elem.querySelectorAll('img');
-
-    let deleteKey = colId.replace("colbutton", "");
-
+    let elem = document.getElementById(thId);
+    elem.remove();
+    let deleteKey = thId.replace("th_", "");
 
     localStorage.removeItem(deleteKey);
-    queue.push(parseInt(deleteKey));
+    cardQueue.push(parseInt(deleteKey));
 
     addExportBox();
-
-    img[0].id = 'empty';
-    img[0].src = '/image/empty_chara.png';
 }
 
 
