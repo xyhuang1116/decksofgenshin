@@ -1,7 +1,7 @@
 //TODO How to communicate deck message when posting and sent back to database
 //TODO queue cardQueue localStorage
 
-var queue = [];
+let queue = [];
 for(let i = 1;i<=3;i++){  // queue is now [1, 2, 3]
     queue.push(i); 
 } 
@@ -11,7 +11,7 @@ localStorage.clear();
 
 function addCharaToDeck(id,codeName) {
 
-    let elem = document.getElementById('row');
+    let elem = document.getElementById('charas');
     let imgs = elem.querySelectorAll('img');
 
     for (let i = 0 ; i < imgs.length; i++) {
@@ -35,7 +35,7 @@ function deleteCharaToDeck(colId) {
     let elem = document.getElementById(colId);
     let img = elem.querySelectorAll('img');
 
-    let deleteKey = colId.replace("colbutton", "");
+    let deleteKey = colId.replace("button", "");
 
 
     localStorage.removeItem(deleteKey);

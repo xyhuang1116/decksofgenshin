@@ -1,5 +1,5 @@
 function unfoldContainer(){
-    document.getElementById('row').style.bottom = '80%';
+    document.getElementById('charas').style.bottom = '80%';
     document.getElementById('container').style.transform = 'translateY(20%)';
     document.getElementById('arrow').src = '/image/downArrow.png';
 
@@ -10,7 +10,7 @@ function unfoldContainer(){
 }
 
 function foldContainer(){
-    document.getElementById('row').style.bottom = 0;
+    document.getElementById('charas').style.bottom = 0;
     document.getElementById('container').style.transform = 'translateY(120%)';
     document.getElementById('arrow').src = '/image/arrow.png';
 
