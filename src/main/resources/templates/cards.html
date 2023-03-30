@@ -14,42 +14,42 @@
     </head>
 
     <body>
-        <div style="margin-bottom:0;">
+        <div>
             <div>
-                <div><h3 style="float: left;">Deck of Genshin</h3></div>
-                <div style="float: right;padding-top:3px;" >  
-                    <button style="height:30px;width:30px;border:none;" id="import" >I</button>
-                    <button style="height:30px;width:30px;border:none;" id="export" onclick="addExportBox()">E</button>
+                <div><h1>Deck of Genshin</h1></div>
+                <div>  
+                    <button id="import" >I</button>
+                    <button id="export" onclick="addExportBox()">E</button>
                 </div>
             </div>
         </div>
 
         <div id = 'deckCodeBox'><input type="text" id = "deckCode" value=""></div>
         
-        <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
-        
+        <!-- <HR style=" width: 100%; border: 0; height: 1px; background: rgb(253, 253, 253);opacity: 0.2;">
+         -->
 
         <div>
-            <div class="row" id="row">
+            <div class="charas" id="charas">
            
-                <button class="colbutton" id="colbutton1" onclick="deleteCharaToDeck('colbutton1')">
+                <button class="button" id="colbutton1" onclick="deleteCharaToDeck('colbutton1')">
                     <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
                 </button>   
-                <button class="colbutton" id="colbutton2" onclick="deleteCharaToDeck('colbutton2')">
+                <button class="button" id="colbutton2" onclick="deleteCharaToDeck('colbutton2')">
                     <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
                 </button>
-                <button class="colbutton" id="colbutton3" onclick="deleteCharaToDeck('colbutton3')">
+                <button class="button" id="colbutton3" onclick="deleteCharaToDeck('colbutton3')">
                     <img th:src="@{/image/empty_chara.png}" id="empty" width=70 height=70/>
                 </button>
 
-                <button class="colbutton" style="margin-top:5px;" id="unfold" onclick="unfoldContainer()">
+                <button class="button" id="unfold" onclick="unfoldContainer()">
                     <img th:src="@{/image/arrow.png}" id="arrow" width=35 height=35/>
                 </button>
             </div>
             
-            <div class="container" id="container" style="width: 100%;">
+            <div class="container" id="container">
                 
-                <div class="myBox" id="selectedCards" style="height: 600px; width: 100%; z-index: 0; white-space: pre-line; ">
+                <div class="myBox" id="selectedCards">
                     <table>
                         <tbody id="cardList">
                         <!--    <tr th:each="card,iterStat : ${cards}">
@@ -65,11 +65,11 @@
             </div>
         </div>  
 
-        <div class="myBox" id="cards" style="height: 600px; width: 100%; z-index:0; white-space: pre-line; ">
+        <div class="myBox" id="cards">
             <table>
                 <tbody>
                     <tr th:each="card,iterStat : ${cards}">
-                    <button class="cardbutton" th:attr="onclick=|addCardToDeck('${card.id}','${card.codeName}','${card.type}','${card.subType}')|">
+                    <button class="button" th:attr="onclick=|addCardToDeck('${card.id}','${card.codeName}','${card.type}','${card.subType}')|">
                         <img th:src="'/image/card/'+${card.type}+ '/' + ${card.subType} + '/' + ${card.id} + '.png'" width=84 height=144 />
                     </button>
                     </tr>

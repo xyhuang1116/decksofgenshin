@@ -21,7 +21,7 @@ function addCardToDeck(id,codeName,type,subType) {
 
     th.id = 'th_'+key;
 
-    botton.className = 'cardbutton';
+    botton.className = 'button';
     botton.id = id+'botton';
     botton.addEventListener("click" , function() { deleteCardToDeck(th.id); },{once:true} );
 
@@ -61,7 +61,7 @@ function deleteCharaToDeck(colId) {
     let elem = document.getElementById(colId);
     let img = elem.querySelectorAll('img');
 
-    let deleteKey = colId.replace("colbutton", "");
+    let deleteKey = colId.replace("button", "");
 
 
     localStorage.removeItem(deleteKey);
