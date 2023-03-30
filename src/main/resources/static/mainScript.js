@@ -1,13 +1,13 @@
-//TODO How to communicate deck message when posting and sent back to database
-//TODO queue cardQueue localStorage
+//TODO How to pass deck data when posting and sent back to database
+//TODO queue cardQueue 
 
-var queue = [];
+let queue = [];
 for(let i = 1;i<=3;i++){  // queue is now [1, 2, 3]
     queue.push(i); 
 } 
 
+let para = new URLSearchParams();
 
-localStorage.clear();
 
 function addCharaToDeck(id,codeName) {
 
@@ -20,7 +20,7 @@ function addCharaToDeck(id,codeName) {
             imgs[i].id = 'full';
             imgs[i].src= '/image/chara/icon/'.concat(id).concat('.png');
 
-            localStorage.setItem(queue.shift().toString(),codeName);
+            para.append(queue.shift().toString(),codeName);
 
             addExportBox();
 
@@ -38,7 +38,7 @@ function deleteCharaToDeck(colId) {
     let deleteKey = colId.replace("colbutton", "");
 
 
-    localStorage.removeItem(deleteKey);
+    para.delete(deleteKey);
     queue.push(parseInt(deleteKey));
 
     addExportBox();
@@ -51,11 +51,21 @@ function deleteCharaToDeck(colId) {
 function addExportBox(){
     let deck = '';
 
-    for(let i=0; i<localStorage.length; i++) {
-        let key = localStorage.key(i);
-        deck = deck + localStorage.getItem(key);
-      }
+    for(let value of para.values()) {
+        deck = deck + value;
+    }
 
     let deckCode = document.getElementById('deckCode');
-    deckCode.value = deck;
+    // deckCode.value = deck;
+    deckCode.value = para.toString();
+
+}
+
+function get(){
+    let para_card = new URLSearchParams(window.location.search),
+        charaNames = para_card.getAll();
+}
+
+function goCard(){
+    location.href = "card.html?" + para.toString();
 }
