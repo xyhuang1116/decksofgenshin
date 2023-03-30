@@ -11,7 +11,7 @@ let para = new URLSearchParams();
 
 function addCharaToDeck(id,codeName) {
 
-    let elem = document.getElementById('row');
+    let elem = document.getElementById('charas');
     let imgs = elem.querySelectorAll('img');
 
     for (let i = 0 ; i < imgs.length; i++) {
@@ -35,7 +35,7 @@ function deleteCharaToDeck(colId) {
     let elem = document.getElementById(colId);
     let img = elem.querySelectorAll('img');
 
-    let deleteKey = colId.replace("colbutton", "");
+    let deleteKey = colId.replace("button", "");
 
 
     para.delete(deleteKey);
