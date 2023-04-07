@@ -20,10 +20,10 @@
             <div>
                 <div><h1>Deck of Genshin</h1></div>
                 <div>  
-                    <form action="" method="post">
-                        <input type="submit" name="post-Cards" value="post-Cards"  id="post-Cards" >Cards</input>
+                    <form action="" method="post" id="postForm" onsubmit="goCard()">
+                        <input type="submit" name="post-Cards" value="Cards"  id="post-Cards" ></input>
                     </form>
-                    <button id="import" >I</button>
+                    <button id="import" onclick="get()">I</button>
                     <button id="export" onclick="addExportBox()">E</button>
                 </div>
             </div>
